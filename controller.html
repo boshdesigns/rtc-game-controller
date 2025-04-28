@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Landscape Game Controller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        background: #111;
+        color: white;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        box-sizing: border-box;
+      }
+
+      .controller {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+      }
+
+      .top {
+        flex: 1;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 40px;
+        box-sizing: border-box;
+      }
+
+      .dpad {
+        display: grid;
+        grid-template-columns: 80px 80px 80px;
+        grid-template-rows: 80px 80px 80px;
+        gap: 5px;
+      }
+
+      .dpad button {
+        width: 80px;
+        height: 80px;
+        font-size: 18px;
+        background: #333;
+        border: 2px solid #666;
+        border-radius: 10px;
+        color: white;
+      }
+
+      .dpad button.empty {
+        background: transparent;
+        border: none;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+
+      .buttons button {
+        width: 80px;
+        height: 80px;
+        font-size: 20px;
+        background: #333;
+        border: 2px solid #666;
+        border-radius: 50%;
+        color: white;
+      }
+
+      .start-button {
+        margin-bottom: 20px;
+      }
+
+      .start-button button {
+        padding: 10px 30px;
+        font-size: 18px;
+        background: #333;
+        border: 2px solid #666;
+        border-radius: 10px;
+        color: white;
+      }
+
+      @media (orientation: portrait) {
+        .controller {
+          display: none;
+        }
+
+        .rotate {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          font-size: 24px;
+        }
+      }
+      @media (orientation: landscape) {
+        .rotate {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rotate">
+      <p>Please rotate your device to landscape mode.</p>
+    </div>
+    <div class="controller">
+      <div class="top">
+        <div class="dpad">
+          <button class="empty"></button>
+          <button id="up">▲</button>
+          <button class="empty"></button>
+
+          <button id="left">◀</button>
+          <button class="empty"></button>
+          <button id="right">▶</button>
+
+          <button class="empty"></button>
+          <button id="down">▼</button>
+          <button class="empty"></button>
+        </div>
+
+        <div class="buttons">
+          <button id="a">A</button>
+          <button id="b">B</button>
+        </div>
+      </div>
+
+      <div class="start-button">
+        <button id="start">Start</button>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <script src="controller.js"></script>
+  </body>
+</html>

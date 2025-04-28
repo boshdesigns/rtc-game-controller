@@ -1,0 +1,24 @@
+{
+  "boot": {
+    "path": "assets/",
+    "files": [
+      {
+        "type": "xml",
+        "key": "copy_xml",
+        "url": "locale/copy.xml"
+      }
+    ]
+  },
+  "preload": {
+    "path": "assets/",
+    "files": []
+  },
+  "spritesheets": {
+    "path": "assets/spritesheets/",
+    "files": [
+      { "type": "multiatlas", "key": "buttons", "atlasURL": "buttons.json" },
+      { "type": "multiatlas", "key": "cards", "atlasURL": "cards.json" },
+      { "type": "multiatlas", "key": "ui", "atlasURL": "ui.json" }
+    ]
+  }
+}
